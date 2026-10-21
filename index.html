@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Meu Treino em Casa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">↗</div>
+    <div>
+      <p class="eyebrow">SEU PLANO DE TREINO</p>
+      <h1>Meu Treino <span>em Casa</span></h1>
+    </div>
+    <button id="editModeBtn" class="button button-ghost" type="button">✎ Personalizar</button>
+  </header>
+
+  <main class="container">
+    <section class="welcome-card">
+      <div>
+        <p class="eyebrow">CONSISTÊNCIA ACIMA DE TUDO</p>
+        <h2 id="todayHeading">Vamos treinar?</h2>
+        <p id="todaySubheading" class="muted">Marque os exercícios conforme concluir.</p>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Progresso do dia</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        <small id="progressCount" class="muted">0 de 0 exercícios concluídos</small>
+      </div>
+    </section>
+
+    <section class="day-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SUA SEMANA</p>
+          <h2>Escolha o dia</h2>
+        </div>
+        <span id="dateLabel" class="date-label"></span>
+      </div>
+      <nav id="dayTabs" class="day-tabs" aria-label="Dias de treino"></nav>
+    </section>
+
+    <section class="workout-heading">
+      <div>
+        <p id="workoutEyebrow" class="eyebrow">TREINO DO DIA</p>
+        <h2 id="workoutTitle">Upper — força</h2>
+        <p id="workoutDescription" class="muted"></p>
+      </div>
+      <div class="heading-actions">
+        <button id="resetDayBtn" class="button button-ghost" type="button">↻ Desmarcar dia</button>
+        <button id="addExerciseBtn" class="button button-primary edit-only" type="button">＋ Exercício</button>
+      </div>
+    </section>
+
+    <div id="editNotice" class="edit-notice" hidden>
+      <strong>Modo de personalização ativo.</strong> Edite nomes, séries e repetições, adicione exercícios ou remova os que não usa. Suas alterações ficam salvas neste navegador.
+    </div>
+
+    <section id="exerciseList" class="exercise-list" aria-live="polite"></section>
+
+    <section class="bottom-note">
+      <span class="note-icon">ⓘ</span>
+      <p><strong>Lembrete:</strong> os checkboxes recomeçam automaticamente a cada nova data. Os pesos e suas personalizações ficam salvos neste navegador. Se sentir dor articular, pare o exercício e ajuste o movimento.</p>
+    </section>
+    <footer>
+      <span>Feito para sua rotina em casa.</span>
+      <button id="exportBtn" class="text-button" type="button">Exportar backup</button>
+      <label class="text-button import-label" for="importFile">Importar backup</label>
+      <input id="importFile" type="file" accept="application/json" hidden>
+    </footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
